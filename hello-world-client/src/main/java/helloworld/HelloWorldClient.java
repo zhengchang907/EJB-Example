@@ -18,11 +18,11 @@ public class HelloWorldClient {
         context.lookup(
             "corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
 
+    System.out.println("Found: " + found);
+
     HelloWorldHome helloWorldHome =
         (HelloWorldHome) PortableRemoteObject.narrow(found, HelloWorldHome.class);
 
-    System.out.println("Found: " + found);
-    
     helloWorldHome.create().helloWorld(args[0]);
   }
 }
