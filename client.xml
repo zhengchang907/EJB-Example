@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<client description="Hello World Client">
+    <featureManager>
+        <feature>javaeeClient-7.0</feature>
+        <feature>appSecurityClient-1.0</feature>
+    </featureManager>
+    <enterpriseApplication id="hello-world" location="hello-world.ear"
+        name="hello-world" />
+</client>
