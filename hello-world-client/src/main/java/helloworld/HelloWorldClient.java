@@ -13,10 +13,12 @@ public class HelloWorldClient {
 
     InitialContext context = new InitialContext();
 
+    // java:global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome
+    // corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome
     Object found =
         context.lookup(
             "corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
-
+    
     HelloWorldHome helloWorldHome =
         (HelloWorldHome) PortableRemoteObject.narrow(found, HelloWorldHome.class);
 

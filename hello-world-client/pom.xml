@@ -5,7 +5,7 @@
     <groupId>hello-world</groupId>
     <artifactId>hello-world-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    
+
     <dependencies>
         <dependency>
             <groupId>javax.ejb</groupId>
