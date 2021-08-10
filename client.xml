@@ -2,24 +2,6 @@
 <client description="Hello World Client">
     <featureManager>
         <feature>javaeeClient-7.0</feature>
-        <feature>appSecurityClient-1.0</feature>
     </featureManager>
-    <keyStore id="defaultKeyStore" password="{xor}EzY9Oi0rJg==" /> <!-- pwd: Liberty, expires1/4/2099 -->
-    <sslDefault sslRef="supportedClientAuthenticationSSLConfig"/>
-    <ssl id="supportedClientAuthenticationSSLConfig" keyStoreRef="defaultKeyStore" clientAuthenticationSupported="true"/>
-    
-    <orb id="defaultOrb">
-        <clientPolicy.clientContainerCsiv2>
-            <layers>
-                <authenticationLayer password="mypwd" realm="BasicRealm" user="bob" establishTrustInClient="Supported" mechanisms="GSSUP"/>
-                <transportLayer/>
-            </layers>
-        </clientPolicy.clientContainerCsiv2>
-    </orb>
-
-    <javaPermission className="java.net.SocketPermission" name="*" actions="connect,listen,resolve"/>
-    <javaPermission className="java.lang.RuntimePermission" name="accessDeclaredMembers"/>
-    <javaPermission className="java.lang.RuntimePermission" name="getClassLoader"/>
-    <enterpriseApplication id="hello-world" location="hello-world.ear"
-        name="hello-world" />
+    <enterpriseApplication id="hello-world" location="hello-world.ear" name="hello-world"/>
 </client>

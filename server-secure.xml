@@ -1,0 +1,45 @@
+<server description="defaultServer">
+    <featureManager>
+        <feature>javaee-8.0</feature>
+        <feature>localConnector-1.0</feature>
+    </featureManager>
+
+    <!-- This template enables security. To get the full use of all the capabilities, a keystore and 
+        user registry are required. -->
+
+    <!-- For the keystore, default keys are generated and stored in a keystore. To provide the key-store 
+        password, generate an encoded password using bin/securityUtility encode and add it below in the password 
+        attribute of the keyStore element. Then uncomment the keyStore element. -->
+    <!-- <keyStore password=""/> -->
+
+    <!--For a user registry configuration, configure your user registry. For example, configure a basic 
+        user registry using the basicRegistry element. Specify your own user name below in the name attribute 
+        of the user element. For the password, generate an encoded password using bin/securityUtility encode 
+        and add it in the password attribute of the user element. Then uncomment the user element. -->
+
+    <keyStore id="defaultKeyStore" password="{xor}EzY9Oi0rJg==" /> <!-- pwd: Liberty, expires1/4/2099 -->
+    <quickStartSecurity userName="bob" userPassword="mypwd" />
+    <sslDefault sslRef="supportedClientAuthenticationSSLConfig" />
+    <ssl id="supportedClientAuthenticationSSLConfig" keyStoreRef="defaultKeyStore" clientAuthenticationSupported="true"/>
+    
+    <iiopEndpoint id="defaultIiopEndpoint" iiopPort="2809" >
+        <iiopsOptions iiopsPort="2810"  sslRef="supportedClientAuthenticationSSLConfig"/>
+    </iiopEndpoint>
+    
+    <orb id="defaultOrb">
+      <serverPolicy.csiv2>
+        <layers>
+          <authenticationLayer establishTrustInClient="Supported" mechanisms="GSSUP"/>
+          <transportLayer sslRef="supportedClientAuthenticationSSLConfig"/>
+        </layers>
+      </serverPolicy.csiv2>
+       <clientPolicy.csiv2>
+        <layers>
+          <authenticationLayer establishTrustInClient="Supported" mechanisms="GSSUP"/>
+          <transportLayer sslRef="supportedClientAuthenticationSSLConfig"/>
+        </layers>
+      </clientPolicy.csiv2>
+    </orb>
+
+    <enterpriseApplication id="hello-world" location="hello-world.ear" name="hello-world"/>
+</server>

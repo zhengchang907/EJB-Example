@@ -9,17 +9,15 @@ import javax.rmi.PortableRemoteObject;
 
 public class HelloWorldClient {
 
-  public static void main(String[] args) throws NamingException, RemoteException, CreateException {
+	public static void main(String[] args) throws NamingException, RemoteException, CreateException {
 
-    InitialContext context = new InitialContext();
+		InitialContext context = new InitialContext();
 
-    Object found =
-        context.lookup(
-            "corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
-    
-    HelloWorldHome helloWorldHome =
-        (HelloWorldHome) PortableRemoteObject.narrow(found, HelloWorldHome.class);
+		Object found = context.lookup(
+				"corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
 
-    helloWorldHome.create().helloWorld(args[0]);
-  }
+		HelloWorldHome helloWorldHome = (HelloWorldHome) PortableRemoteObject.narrow(found, HelloWorldHome.class);
+
+		helloWorldHome.create().helloWorld(args[0]);
+	}
 }
