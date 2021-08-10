@@ -9,22 +9,19 @@ import javax.rmi.PortableRemoteObject;
 
 public class HelloWorldClient {
 
-	public static void main(String[] args) throws NamingException, RemoteException, CreateException {
-		System.out.println("invoking remote EJB from client");
-		
-		InitialContext context = new InitialContext();
-		System.out.println("invoked 1 remote EJB from client");
-		
-		//corbaname:rir:#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome
-		//corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome
-		Object found = context.lookup("corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
+  public static void main(String[] args) throws NamingException, RemoteException, CreateException {
 
-		System.out.println("invoked 2 remote EJB from client");
-		HelloWorldHome helloWorldHome = (HelloWorldHome)PortableRemoteObject.narrow(found, HelloWorldHome.class);
+    InitialContext context = new InitialContext();
 
-		System.out.println("invoked 3 remote EJB from client");
-		helloWorldHome.create().helloWorld(args[0]);
-		System.out.println("invoked 4 remote EJB from client");
-	}
+    // java:global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome
+    // corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome
+    Object found =
+        context.lookup(
+            "corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
+    
+    HelloWorldHome helloWorldHome =
+        (HelloWorldHome) PortableRemoteObject.narrow(found, HelloWorldHome.class);
 
+    helloWorldHome.create().helloWorld(args[0]);
+  }
 }
