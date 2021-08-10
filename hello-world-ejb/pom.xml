@@ -30,7 +30,6 @@
                 <artifactId>maven-ejb-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <generateClient>true</generateClient>
                     <ejbVersion>3.2</ejbVersion>
                 </configuration>
             </plugin>

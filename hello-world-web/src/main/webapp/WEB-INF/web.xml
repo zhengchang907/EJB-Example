@@ -4,7 +4,14 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
          http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
     version="4.0">
-    <welcome-file-list>
-        <welcome-file>/HelloWorldServlet</welcome-file>
-    </welcome-file-list>
+    
+	<servlet>
+		<servlet-name>HelloWorldServlet</servlet-name>
+		<servlet-class>helloworld.HelloWorldServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HelloWorldServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
 </web-app>

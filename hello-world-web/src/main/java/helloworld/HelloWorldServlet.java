@@ -3,6 +3,7 @@ package helloworld;
 import java.io.IOException;
 
 import javax.ejb.CreateException;
+import javax.ejb.EJB;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.rmi.PortableRemoteObject;
@@ -18,6 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 public class HelloWorldServlet extends HttpServlet {
 
   private static final long serialVersionUID = 1L;
+  
+  @EJB
+  HelloWorldHome helloWorldHome;
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -41,9 +45,10 @@ public class HelloWorldServlet extends HttpServlet {
       HelloWorldHome helloWorldHomeUsingWebSphere =
           (HelloWorldHome) PortableRemoteObject.narrow(foundUsingWebSphere, HelloWorldHome.class);
 
-      helloWorldHomeUsingGlobal.create().helloWorld("Reza");
-      helloWorldHomeUsingApp.create().helloWorld("Zheng");
-      helloWorldHomeUsingWebSphere.create().helloWorld("Ed");
+      helloWorldHomeUsingGlobal.create().helloWorld("Access EJB using java:global");
+      helloWorldHomeUsingApp.create().helloWorld("Access EJB using java:app");
+      helloWorldHomeUsingWebSphere.create().helloWorld("Access EJB using ejb");
+      helloWorldHome.create().helloWorld("Access EJB using @EJB");
     } catch (NamingException e) {
       e.printStackTrace();
     } catch (CreateException e) {
