@@ -6,7 +6,7 @@
     <artifactId>hello-world-ejb</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>ejb</packaging>
-    
+
     <dependencies>
         <dependency>
             <groupId>javax.ejb</groupId>
@@ -14,8 +14,8 @@
             <version>3.2</version>
             <scope>provided</scope>
         </dependency>
-    </dependencies>    
-    
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -30,6 +30,7 @@
                 <artifactId>maven-ejb-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
+                    <generateClient>true</generateClient>
                     <ejbVersion>3.2</ejbVersion>
                 </configuration>
             </plugin>

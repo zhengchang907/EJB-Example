@@ -24,7 +24,7 @@
             <groupId>hello-world</groupId>
             <artifactId>hello-world-ejb</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-            <type>ejb</type>
+            <type>ejb-client</type>
         </dependency>
     </dependencies>
 
