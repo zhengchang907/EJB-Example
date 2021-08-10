@@ -9,15 +9,29 @@ import javax.rmi.PortableRemoteObject;
 
 public class HelloWorldClient {
 
-	public static void main(String[] args) throws NamingException, RemoteException, CreateException {
+	public static void main(String[] args) {
 
-		InitialContext context = new InitialContext();
+		try {
+			InitialContext context = new InitialContext();
 
-		Object found = context.lookup(
-				"corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
+			Object foundUsingGlobal = context
+					.lookup("java:global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
+			Object foundUsingCorba = context.lookup(
+					"corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
 
-		HelloWorldHome helloWorldHome = (HelloWorldHome) PortableRemoteObject.narrow(found, HelloWorldHome.class);
+			HelloWorldHome helloWorldHomeUsingGlobal = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingGlobal,
+					HelloWorldHome.class);
+			HelloWorldHome helloWorldHomeUsingCorba = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingCorba,
+					HelloWorldHome.class);
 
-		helloWorldHome.create().helloWorld(args[0]);
+			helloWorldHomeUsingGlobal.create().helloWorld("Access EJB using java:global");
+			helloWorldHomeUsingCorba.create().helloWorld("Access EJB using corbaname:");
+		} catch (NamingException e) {
+			e.printStackTrace();
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (CreateException e) {
+			e.printStackTrace();
+		}
 	}
 }
