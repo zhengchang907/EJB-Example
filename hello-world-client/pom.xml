@@ -22,9 +22,8 @@
 		</dependency>
 		<dependency>
 			<groupId>hello-world</groupId>
-			<artifactId>hello-world-ejb</artifactId>
+			<artifactId>hello-world-ejb-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<type>ejb-client</type>
 		</dependency>
 	</dependencies>
 

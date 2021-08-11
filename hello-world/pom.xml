@@ -10,15 +10,14 @@
 	<dependencies>
 		<dependency>
 			<groupId>hello-world</groupId>
-			<artifactId>hello-world-ejb</artifactId>
+			<artifactId>hello-world-ejb-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<type>ejb</type>
 		</dependency>
 		<dependency>
 			<groupId>hello-world</groupId>
 			<artifactId>hello-world-ejb</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-			<type>ejb-client</type>
+			<type>ejb</type>
 		</dependency>
 		<dependency>
 			<groupId>hello-world</groupId>
@@ -75,8 +74,9 @@
 						</appClientModule>
 						<ejbClientModule>
 							<groupId>hello-world</groupId>
-							<artifactId>hello-world-ejb</artifactId>
+							<artifactId>hello-world-ejb-client</artifactId>
 							<bundleFileName>hello-world-ejb-client.jar</bundleFileName>
+							<type>jar</type>
 						</ejbClientModule>
 					</modules>
 				</configuration>
