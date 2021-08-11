@@ -1,11 +1,8 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>hello-world</groupId>
-	<artifactId>hello-world-ejb</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>ejb</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hello-world</groupId>
+  <artifactId>hello-world-ejb-client</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
 
 	<dependencies>
 		<dependency>
@@ -14,13 +11,9 @@
 			<version>3.2</version>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
-			<groupId>hello-world</groupId>
-			<artifactId>hello-world-ejb-client</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
-
+	
+	
 	<build>
 		<plugins>
 			<plugin>
