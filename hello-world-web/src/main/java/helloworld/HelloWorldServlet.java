@@ -29,8 +29,7 @@ public class HelloWorldServlet extends HttpServlet {
 			Object foundUsingGlobal = context
 					.lookup("java:global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
 			Object foundUsingApp = context.lookup("java:app/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
-			Object foundUsingWebSphere = context
-					.lookup("ejb/hello-world/hello-world-ejb.jar/HelloWorld#helloworld.HelloWorldHome");
+			Object foundUsingWebSphere = context.lookup("ejb/session/HelloWorld");
 
 			HelloWorldHome helloWorldHomeUsingGlobal = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingGlobal,
 					HelloWorldHome.class);
