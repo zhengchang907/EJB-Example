@@ -18,7 +18,7 @@ public class HelloWorldClient {
 					.lookup("java:global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
 			Object foundUsingCorba = context.lookup(
 					"corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
-			Object foundUsingWebSphere = context.lookup("corbaname::localhost:2809#ejb/session/HelloWorld");
+			Object foundUsingWebSphere = context.lookup("java:comp/env/ejb/HelloWorldApp");
 
 			HelloWorldHome helloWorldHomeUsingGlobal = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingGlobal,
 					HelloWorldHome.class);

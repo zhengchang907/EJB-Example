@@ -5,4 +5,10 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application-client_7.xsd"
 	version="7">
 	<display-name>hello-world-client</display-name>
+	<ejb-ref>
+		<ejb-ref-name>ejb/HelloWorldApp</ejb-ref-name>
+		<ejb-ref-type>Session</ejb-ref-type>
+		<home>helloworld.HelloWorldHome</home>
+		<remote>helloworld.HelloWorldRemote</remote>
+	</ejb-ref>
 </application-client>
