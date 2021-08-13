@@ -29,18 +29,18 @@ public class HelloWorldServlet extends HttpServlet {
 			Object foundUsingGlobal = context
 					.lookup("java:global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
 			Object foundUsingApp = context.lookup("java:app/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
-//			Object foundUsingWebSphere = context.lookup("ejb/session/HelloWorld");
+			Object foundUsingWebSphere = context.lookup("ejb/session/HelloWorld");
 
 			HelloWorldHome helloWorldHomeUsingGlobal = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingGlobal,
 					HelloWorldHome.class);
 			HelloWorldHome helloWorldHomeUsingApp = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingApp,
 					HelloWorldHome.class);
-//			HelloWorldHome helloWorldHomeUsingWebSphere = (HelloWorldHome) PortableRemoteObject
-//					.narrow(foundUsingWebSphere, HelloWorldHome.class);
+			HelloWorldHome helloWorldHomeUsingWebSphere = (HelloWorldHome) PortableRemoteObject
+					.narrow(foundUsingWebSphere, HelloWorldHome.class);
 
 			helloWorldHomeUsingGlobal.create().helloWorld("Access EJB using java:global");
 			helloWorldHomeUsingApp.create().helloWorld("Access EJB using java:app");
-//			helloWorldHomeUsingWebSphere.create().helloWorld("Access EJB using ejb/");
+			helloWorldHomeUsingWebSphere.create().helloWorld("Access EJB using ejb/");
 			helloWorldHome.create().helloWorld("Access EJB using @EJB");
 		} catch (NamingException e) {
 			e.printStackTrace();

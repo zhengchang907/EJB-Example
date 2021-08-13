@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ejb-jar id="EJBJar_1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	version="3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd">
+<!-- <ejb-jar id="EJBJar_1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="3.2" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+	http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd"> -->
+<ejb-jar id="EJBJar_1" version="2.1"
+	xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/ejb-jar_2_1.xsd">
 	<display-name>hello-world-ejb</display-name>
-	<ejb-client-jar>hello-world-ejb-client</ejb-client-jar>
 	<enterprise-beans>
 		<session id="Session_HelloWorld">
 			<ejb-name>HelloWorld</ejb-name>
