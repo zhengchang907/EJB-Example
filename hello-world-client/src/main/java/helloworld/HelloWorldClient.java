@@ -18,18 +18,18 @@ public class HelloWorldClient {
 					.lookup("java:global/hello-world/hello-world-ejb/HelloWorld!helloworld.HelloWorldHome");
 			Object foundUsingCorba = context.lookup(
 					"corbaname::localhost:2809#ejb/global/hello-world/hello-world-ejb/HelloWorld!helloworld%5c.HelloWorldHome");
-			Object foundUsingWebSphere = context.lookup("java:comp/env/ejb/HelloWorldApp");
+			Object foundUsingRef = context.lookup("java:comp/env/ejb/session/HelloWorld");
 
 			HelloWorldHome helloWorldHomeUsingGlobal = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingGlobal,
 					HelloWorldHome.class);
 			HelloWorldHome helloWorldHomeUsingCorba = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingCorba,
 					HelloWorldHome.class);
-			HelloWorldHome helloWorldHomeUsingWebSphere = (HelloWorldHome) PortableRemoteObject
-					.narrow(foundUsingWebSphere, HelloWorldHome.class);
+			HelloWorldHome helloWorldHomeUsingRef = (HelloWorldHome) PortableRemoteObject
+					.narrow(foundUsingRef, HelloWorldHome.class);
 
 			helloWorldHomeUsingGlobal.create().helloWorld("Access EJB using java:global");
 			helloWorldHomeUsingCorba.create().helloWorld("Access EJB using corbaname:");
-			helloWorldHomeUsingWebSphere.create().helloWorld("Access EJB using ejb/");
+			helloWorldHomeUsingRef.create().helloWorld("Access EJB using java:comp/env");
 		} catch (NamingException e) {
 			e.printStackTrace();
 		} catch (RemoteException e) {
