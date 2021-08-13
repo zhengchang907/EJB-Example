@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ejbbnd:EJBJarBinding xmi:version="2.0"
 	xmlns:xmi="http://www.omg.org/XMI" xmlns:ejbbnd="ejbbnd.xmi"
-	xmlns:ejb="ejb.xmi" xmi:id="EJBJarBinding_1">
-	<ejbJar href="META-INF/ejb-jar.xml#EJBJar_1" />
+	xmlns:ejb="ejb.xmi" xmi:id="Ejb_Jar_Binding_1">
+	<ejbJar href="META-INF/ejb-jar.xml#Ejb_Jar_1" />
 	<ejbBindings xmi:id="Session_HelloWorld_Bnd"
 		jndiName="ejb/session/HelloWorld">
 		<enterpriseBean xmi:type="ejb:Session"
