@@ -16,5 +16,5 @@
 
 	<applicationMonitor updateTrigger="mbean"/>
 
-        <enterpriseApplication id="hello-world" location="hello-world.ear" name="hello-world"/>
+    <enterpriseApplication id="hello-world" location="hello-world.ear" name="hello-world"/>
 </server>
