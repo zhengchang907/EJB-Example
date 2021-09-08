@@ -12,7 +12,9 @@ Maven is used as the build system and the top level directory contains a [parent
 
    ```
    mvn clean install
-   ```  
+   ```
+
+After the artifacts are built, you can deploy the EAR to Liberty (typically by copying it to the `apps/` directory of your Liberty server installation). You should also copy over the supplied `server.xml` in the sample. Once you perform these actions, you can run the application and test the web application. The web application context path is `/hello-world`.
 
 You may use the default unsecured server.xml and client.xml files for this example. However, you can also opt to use the secure versions of configuration. If you do use the secure configuration, the client and server SSL configurations must match. The easiest way to ensure this is having the Liberty server generate them and copying over the configuration files to the client.
 
