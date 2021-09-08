@@ -8,7 +8,7 @@ This repository shows an EJB 2 remote example running on WebSphere Liberty/Open 
 * [hello-world-client](hello-world-client/) - has the App Client.
 * [hello-world](hello-world/) - has the contents of the EAR.
 
-Maven is used as the build system and the top level directory contains a patent POM that has the EJB JAR, EJB Client JAR, WAR, EAR and App Client as modules. You can use Java SE 8+ (including Java SE 11) to run the build to generate all the artifacts. Just run the Maven build at the top level directory:
+Maven is used as the build system and the top level directory contains a [parent POM](pom.xml) that has the EJB JAR, EJB Client JAR, WAR, EAR and App Client as modules. You can use Java SE 8+ (including Java SE 11) to run the build to generate all the artifacts. Just run the Maven build at the top level directory:
 
    ```
    mvn clean install
