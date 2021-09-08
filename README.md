@@ -2,7 +2,7 @@
 
 This repository shows an EJB 2 remote example running on WebSphere Liberty/Open Liberty. The sample code includes an EJB JAR, EJB Client JAR, WAR, EAR and App Client:
 
-* <hello-world-client> - has the 
+* [hello-world-client](hello-world-client/) - has the 
 hello-world-ejb-client
 Utilize parent pom.
 14 days ago
