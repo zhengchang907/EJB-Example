@@ -4,7 +4,7 @@ This repository shows an EJB 2 remote example running on WebSphere Liberty/Open 
 
 * [hello-world-ejb](hello-world-ejb/) - has the EJB JAR.
 * [hello-world-web](hello-world-web/) - has the WAR.
-* [hello-world-ejb-client](hello-world-ejb-client/) - has the artifacts shared by the EJB JAR, WAR and App Client such as the EJB 2 home and remote intefaces.
+* [hello-world-ejb-client](hello-world-ejb-client/) - has the EJB Client artifacts shared by the EJB JAR, WAR and App Client such as the EJB 2 home and remote intefaces.
 * [hello-world-client](hello-world-client/) - has the App Client.
 * [hello-world](hello-world/) - has the contents of the EAR.
 
