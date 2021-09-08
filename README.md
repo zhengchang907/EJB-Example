@@ -1,4 +1,4 @@
-# Liberty EJB 2 remote example with EJB JAR, EJB Client JAR, WAR, EAR and App Client
+# Liberty EJB 2 Remote Example with EJB JAR, EJB Client JAR, WAR, EAR and App Client
 
 This repository shows an EJB 2 remote example running on WebSphere Liberty/Open Liberty. The sample code includes an EJB JAR, EJB Client JAR, WAR, EAR and App Client:
 
