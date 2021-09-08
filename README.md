@@ -16,8 +16,8 @@ Maven is used as the build system and the top level directory contains a [parent
 
 After the artifacts are built, you can deploy the EAR to Liberty (typically by copying it to the `apps/` directory of your Liberty server installation). You should also copy over the supplied `server.xml` in the sample. Once you perform these actions, you can run the application and test the web application. The web application context path is `/hello-world`.
 
-You can then run the App Client following the instructions found [here](https://www.ibm.com/docs/en/was-liberty/core?topic=liberty-preparing-running-application-client).
+You can then run the App Client following the instructions found [here](https://www.ibm.com/docs/en/was-liberty/core?topic=liberty-preparing-running-application-client). Be sure to copy the EAR to the `apps/` directory of your Liberty client and also copy over the supplied `client.xml` in the sample. The App Client sample does not use any command line arguments.
 
-You may use the default unsecured server.xml and client.xml files for this example. However, you can also opt to use the secure versions of configuration. If you do use the secure configuration, the client and server SSL configurations must match. The easiest way to ensure this is having the Liberty server generate them and copying over the configuration files to the client.
+You may use the default unsecured `server.xml` and `client.xml` files for this example. However, you can also opt to use the secure versions of configuration. If you do use the secure configuration, the client and server SSL configurations must match. The easiest way to ensure this is having the Liberty server generate them and copying over the configuration files to the client.
 
-Just run the server successfully first with the deployed EAR. Then copy over the key.p12 and ltpa.keys files from the server's resources/security directory to the client's resources/security directory before running the client.
+Just run the server successfully first with the deployed EAR. Then copy over the `key.p12` and `ltpa.keys` files from the server's `resources/security` directory to the client's `resources/security` directory before running the client.
