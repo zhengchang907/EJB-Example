@@ -10,8 +10,8 @@ public class HelloWorldBean implements SessionBean {
 
 	private static final long serialVersionUID = 1L;
 
-	public void helloWorld(String name) {
-		System.out.println("Hello world, " + name);
+	public String helloWorld(String name) {
+		return "Hello world, " + name;
 	}
 
 	public void setSessionContext(SessionContext ctx) throws EJBException, RemoteException {
