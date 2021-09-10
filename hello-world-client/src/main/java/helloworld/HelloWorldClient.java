@@ -30,10 +30,10 @@ public class HelloWorldClient {
 			HelloWorldHome helloWorldHomeUsingRef = (HelloWorldHome) PortableRemoteObject.narrow(foundUsingRef,
 					HelloWorldHome.class);
 
-			helloWorldHomeUsingGlobal.create().helloWorld("Access EJB using java:global");
-			helloWorldHomeUsingApp.create().helloWorld("Access EJB using java:app");
-			helloWorldHomeUsingCorba.create().helloWorld("Access EJB using corbaname:");
-			helloWorldHomeUsingRef.create().helloWorld("Access EJB using java:comp/env");
+			System.out.println(helloWorldHomeUsingGlobal.create().helloWorld("Access EJB using java:global"));
+			System.out.println(helloWorldHomeUsingApp.create().helloWorld("Access EJB using java:app"));
+			System.out.println(helloWorldHomeUsingCorba.create().helloWorld("Access EJB using corbaname:"));
+			System.out.println(helloWorldHomeUsingRef.create().helloWorld("Access EJB using java:comp/env"));
 		} catch (NamingException e) {
 			e.printStackTrace();
 		} catch (RemoteException e) {
